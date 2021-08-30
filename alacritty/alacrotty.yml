@@ -1,0 +1,7 @@
+font:
+  normal:
+    family: DejaVu Sans Mono for Powerline
+  size: 14
+background_opacity: 0.7
+key_bindings:
+    - { key: W,        mods: Command,     chars: "\x1bp"                       }
