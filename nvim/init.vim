@@ -50,6 +50,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'tomasr/molokai'
+Plug 'phaazon/hop.nvim'
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -92,6 +93,9 @@ Plug 'gko/vim-coloresque'
 Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 
+" yaml
+"" YAML plugin
+Plug 'stephpy/vim-yaml'
 
 " javascript
 "" Javascript Bundle
@@ -176,17 +180,17 @@ set ruler
 set number
 
 let no_buffers_menu=1
-colorscheme molokai
+"" colorscheme molokai
 
 
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
-set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 14
+set gfn=Fira\ Code\ 14
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
+    set guifont=Fira\ Code
     set transparency=7
   endif
 else
@@ -338,6 +342,10 @@ set autoread
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
+"" Hop
+noremap <Leader><Leader>w :HopWord<CR>
+noremap <Leader><Leader>1 :HopChar1<CR>
+noremap <Leader><Leader>2 :HopChar2<CR>
 
 "" Split
 noremap <Leader>h :<C-u>split<CR>
