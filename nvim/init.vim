@@ -77,6 +77,9 @@ Plug 'honza/vim-snippets'
 "" Custom bundles
 "*****************************************************************************
 
+" Terraform
+Plug 'hashivim/vim-terraform'
+
 " COC
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 let g:coc_global_extensions = [ 'coc-tsserver' ]
