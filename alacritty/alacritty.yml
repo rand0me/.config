@@ -1,7 +1,8 @@
 font:
   normal:
-    family: Fira Code
+    family: Liga Menlo
   size: 14
-background_opacity: 0.9
+window:
+  opacity: 0.9
 key_bindings:
     - { key: W,        mods: Command,     chars: "\x1bp"                       }
