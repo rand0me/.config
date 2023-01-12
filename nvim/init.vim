@@ -51,7 +51,7 @@ Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'tomasr/molokai'
 Plug 'phaazon/hop.nvim'
-
+Plug 'preservim/nerdcommenter'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -88,7 +88,6 @@ let g:coc_global_extensions = [ 'coc-tsserver' ]
 "" Go Lang Bundle
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
-
 " html
 "" HTML Bundle
 Plug 'hail2u/vim-css3-syntax'
@@ -116,9 +115,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'peitalin/vim-jsx-typescript'
 
-
-"*****************************************************************************
-"*****************************************************************************
+" Theme
+Plug 'joshdick/onedark.vim'
 
 "" Include user's extra bundle
 if filereadable(expand("~/.config/nvim/local_bundles.vim"))
@@ -144,9 +142,9 @@ set ttyfast
 set backspace=indent,eol,start
 
 "" Tabs. May be overridden by autocmd rules
-set tabstop=4
+set tabstop=2
 set softtabstop=0
-set shiftwidth=4
+set shiftwidth=2
 set expandtab
 
 "" Map leader to ,
@@ -182,18 +180,17 @@ syntax on
 set ruler
 set number
 
+colorscheme onedark
 let no_buffers_menu=1
-"" colorscheme molokai
-
 
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
-set gfn=Fira\ Code\ 14
+set gfn=Fira\ Code:h14
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
-    set guifont=Fira\ Code
+    set guifont=Fira\ Code:h14
     set transparency=7
   endif
 else
@@ -251,7 +248,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'onedark'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -549,7 +546,8 @@ augroup END
 " html
 " for html files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
-
+let g:user_emmet_expandabbrkey='<Tab>'
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
